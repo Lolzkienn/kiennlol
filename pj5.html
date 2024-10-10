@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; text-align: center; }
+        .header { background-color: #333; color: white; padding: 20px; }
+        .thank-you-container { max-width: 600px; margin: 20px auto; padding: 20px; background-color: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        h2 { margin-bottom: 10px; }
+        p { margin: 10px 0; }
+        a { color: #4CAF50; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Thank You for Your Order!</h1>
+    </div>
+
+    <div class="thank-you-container">
+        <h2>Your order is being processed!</h2>
+        <p>We appreciate your business and are preparing your order for shipment.</p>
+        <p>Please confirm your payment and shipping information below:</p>
+
+        <h3>Order Summary:</h3>
+        <p><strong>iPhone Model:</strong> <span id="selected-model"></span></p>
+        <p><strong>Storage:</strong> <span id="selected-storage"></span></p>
+        <p><strong>Color:</strong> <span id="selected-color"></span></p>
+        <p><strong>Extra Features:</strong> <span id="selected-features"></span></p>
+        <p><strong>Shipping Address:</strong> <span id="shipping-address"></span></p>
+        <p><strong>Payment Method:</strong> <span id="payment-method"></span></p>
+
+        <h3>Helpful Links:</h3>
+        <p>
+            <a href="support.html">Customer Support</a><br>
+            <a href="faq.html">Frequently Asked Questions</a><br>
+            <a href="contact.html">Contact Us</a>
+        </p>
+        
+        <h3>Follow Us:</h3>
+        <p>
+            <a href="https://www.facebook.com">Facebook</a> | 
+            <a href="https://www.twitter.com">Twitter</a> | 
+            <a href="https://www.instagram.com">Instagram</a>
+        </p>
+        
+        <p>Thank you for choosing us!</p>
+    </div>
+
+    <script>
+        // Retrieve selected values from localStorage (assuming they were stored previously)
+        const selectedModel = localStorage.getItem('iphoneModel') || 'Not specified';
+        const selectedStorage = localStorage.getItem('storage') || 'Not specified';
+        const selectedColor = localStorage.getItem('color') || 'Not specified';
+        const selectedFeatures = localStorage.getItem('extraFeatures') || 'None';
+        const shippingAddress = localStorage.getItem('shippingAddress') || 'Not specified';
+        const paymentMethod = localStorage.getItem('paymentMethod') || 'Not specified';
+
+        // Display the values in the confirmation section
+        document.getElementById('selected-model').textContent = selectedModel;
+        document.getElementById('selected-storage').textContent = selectedStorage;
+        document.getElementById('selected-color').textContent = selectedColor;
+        document.getElementById('selected-features').textContent = selectedFeatures;
+        document.getElementById('shipping-address').textContent = shippingAddress;
+        document.getElementById('payment-method').textContent = paymentMethod;
+    </script>
+
+</body>
+</html>

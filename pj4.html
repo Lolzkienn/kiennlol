@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            text-align: center; 
+            margin: 0; 
+            padding: 0;
+        }
+        .header { 
+            background-color: #222; /* Darker header */
+            color: white; 
+            padding: 30px; 
+        }
+        .confirmation-container { 
+            max-width: 600px; 
+            margin: 40px auto; 
+            padding: 30px; 
+            background-color: #1c1c1c; /* Dark background for container */
+            border-radius: 15px; 
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); 
+        }
+        h2, h3 { 
+            margin-bottom: 15px; 
+        }
+        p { 
+            margin: 15px 0; 
+        }
+        button { 
+            background-color: #4CAF50; 
+            color: white; 
+            padding: 12px 25px; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            margin: 10px; 
+            transition: background-color 0.3s ease; 
+        }
+        button:hover { 
+            background-color: #45a049; /* Darker green on hover */
+        }
+        .cancel-button { 
+            background-color: #f44336; /* Red cancel button */
+        }
+        .cancel-button:hover { 
+            background-color: #e53935; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Order Confirmation</h1>
+    </div>
+
+    <div class="confirmation-container">
+        <h2>Review Your Order</h2>
+        <p><strong>iPhone Model:</strong> <span id="selected-model"></span></p>
+        <p><strong>Storage Capacity:</strong> <span id="selected-storage"></span></p>
+        <p><strong>Color:</strong> <span id="selected-color"></span></p>
+        <p><strong>Extra Features:</strong> <span id="selected-features"></span></p>
+        <p><strong>Shipping Address:</strong> <span id="shipping-address"></span></p>
+        <p><strong>Payment Method:</strong> <span id="payment-method"></span></p>
+
+        <h3>Is this information correct?</h3>
+        <button onclick="proceedToCheckout()">Proceed to Checkout</button>
+        <button class="cancel-button" onclick="goBack()">Cancel Order</button>
+    </div>
+
+    <script>
+        // Retrieve the selected values from localStorage
+        const selectedModel = localStorage.getItem('iphoneModel') || 'Not specified';
+        const selectedStorage = localStorage.getItem('storage') || 'Not specified';
+        const selectedColor = localStorage.getItem('color') || 'Not specified';
+        const selectedFeatures = localStorage.getItem('extraFeatures') || 'None';
+        const shippingAddress = localStorage.getItem('shippingAddress') || 'Not specified';
+        const paymentMethod = localStorage.getItem('paymentMethod') || 'Not specified';
+
+        // Display the values in the confirmation section
+        document.getElementById('selected-model').textContent = selectedModel;
+        document.getElementById('selected-storage').textContent = selectedStorage;
+        document.getElementById('selected-color').textContent = selectedColor;
+        document.getElementById('selected-features').textContent = selectedFeatures;
+        document.getElementById('shipping-address').textContent = shippingAddress;
+        document.getElementById('payment-method').textContent = paymentMethod;
+
+        function proceedToCheckout() {
+            // Redirect to the Thank You page (Page 5)
+            window.location.href = "pj5.html"; // Replace with the actual filename of Page 5
+        }
+
+        function goBack() {
+            // Redirect back to the customization page (Page 3)
+            window.location.href = "pj3.html"; // Replace with the actual filename of Page 3
+        }
+    </script>
+
+</body>
+</html>
